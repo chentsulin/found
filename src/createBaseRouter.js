@@ -2,16 +2,11 @@ import isEqual from 'lodash/isEqual';
 import React from 'react';
 import StaticContainer from 'react-static-container';
 
-import getRoutes from './getRoutes';
 import HttpError from './HttpError';
 import { matchShape, routerShape } from './PropTypes';
 import RedirectException from './RedirectException';
 
-export default function createBaseRouter({
-  routeConfig,
-  matcher,
-  render,
-}) {
+export default function createBaseRouter({ matcher, render }) {
   const propTypes = {
     match: matchShape.isRequired,
     resolvedMatch: React.PropTypes.object.isRequired,
@@ -111,8 +106,8 @@ export default function createBaseRouter({
 
     async resolveMatch() {
       const { match, matchContext, resolveElements } = this.props;
+      const routes = matcher.getRoutes(match);
 
-      const routes = getRoutes(routeConfig, match);
       const augmentedMatch = {
         ...match,
         routes,

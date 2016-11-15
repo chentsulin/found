@@ -543,7 +543,6 @@ const store = createStore(
 store.dispatch(FarceActions.init());
 
 const ConnectedRouter = createConnectedRouter({
-  routeConfig,
   matcher,
 
   render: createRender({

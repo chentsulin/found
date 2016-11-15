@@ -11,7 +11,6 @@ export createRender from './createRender';
 export createWithRouter from './createWithRouter';
 export ElementsRenderer from './ElementsRenderer';
 export foundReducer from './foundReducer';
-export getRoutes from './getRoutes';
 export HttpError from './HttpError';
 export Link from './Link';
 export Matcher from './Matcher';
